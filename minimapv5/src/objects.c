@@ -80,7 +80,7 @@ void init_objects() {
 
     // Set movement limits for obstacle (75px to the left and right)
     obstacle.leftLimit = 500 - 75;  // Move 75px to the left of the initial X position
-    obstacle.rightLimit = 500 + 75; // Move 75px to the right of the initial X position
+    obstacle.rightLimit = 500 + 170; // Move 75px to the right of the initial X position
     obstacle.velocityX = 2;         // Speed of the obstacle movement
 }
 
