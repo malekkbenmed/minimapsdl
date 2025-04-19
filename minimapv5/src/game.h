@@ -8,7 +8,7 @@
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
-#define GROUND_LEVEL 470
+#define GROUND_LEVEL 500
 
 typedef struct {
     SDL_Surface* screen;

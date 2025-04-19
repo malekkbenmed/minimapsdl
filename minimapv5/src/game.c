@@ -114,15 +114,6 @@ void update_game() {
     SDL_Flip(game.screen);
 }
 
-void cleanup_game() {
-    if (sky) SDL_FreeSurface(sky);
-    if (city) SDL_FreeSurface(city);  // Free the city surface.
-    if (ground) SDL_FreeSurface(ground);
-    if (font) TTF_CloseFont(font);
-    TTF_Quit();
-    IMG_Quit();
-    SDL_Quit();
-}
 
 void save_game() {
     FILE* fp = fopen("save.txt", "w");
@@ -144,5 +135,15 @@ void load_game() {
     fscanf(fp, "%hd %hd %d", &player.position.x, &player.position.y, &coin.active);
     fclose(fp);
     printf("Game loaded successfully!\n");
+}
+
+void cleanup_game() {
+    if (sky) SDL_FreeSurface(sky);
+    if (city) SDL_FreeSurface(city);  // Free the city surface.
+    if (ground) SDL_FreeSurface(ground);
+    if (font) TTF_CloseFont(font);
+    TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
 }
 

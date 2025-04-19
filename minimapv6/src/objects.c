@@ -88,18 +88,17 @@ void init_objects() {
 void update_objects() {
     // Animate the coin if active
     if (coin.active) {
-        static Uint32 last_update = 0;
-        const int delay = 100;  // frame delay in milliseconds
+        static Uint32 last = 0;
         Uint32 now = SDL_GetTicks();
-        if (now - last_update > delay) {
+        if (now - last > 100) {
             coin.frame = (coin.frame + 1) % coin.max_frame;
-            last_update = now;
+            last = now;
         }
         if (check_collision(player.position, coin.position)) {
             coin.active = 0;
-            printf("Coin collected!\n");
+            game.score += 1;          // ← increment score
             flashBackground = 1;
-            flashStartTime = SDL_GetTicks();
+            flashStartTime = now;
         }
     }
 
