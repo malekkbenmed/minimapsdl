@@ -1,2 +1,0 @@
-gcc -o game  src/main.c src/game.c src/player.c src/objects.c src/minimap.c \
-    -lSDL -lSDL_image -lSDL_ttf
