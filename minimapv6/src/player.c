@@ -102,7 +102,7 @@ void handle_input_player(Player* player, const Uint8* keystate) {
     }
     player->moving = isMoving;
 
-    // Jump if the space key is pressed and the player is not already airborne.
+    // Jump if the up is pressed and the player is not already airborne.
     if (keystate[SDLK_SPACE] && !player->jumping) {
         player->velocityY = -25;  // Jump force (adjust as needed)
         player->jumping = 1;

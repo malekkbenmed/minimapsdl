@@ -96,7 +96,8 @@ void update_objects() {
         }
         if (check_collision(player.position, coin.position)) {
             coin.active = 0;
-            game.score += 1;          // ← increment score
+            printf("Coin collected!\n");
+            game.score += 1;         
             flashBackground = 1;
             flashStartTime = now;
         }

@@ -137,6 +137,7 @@ void save_game() {
             game.health,
             game.score);
     fclose(f);
+printf("Game saved successfully!\n");
 }
 
 void load_game() {
@@ -157,6 +158,7 @@ void load_game() {
     if (game.health <= 0) {
         game.health = MAX_HEALTH;
     }
+printf("Game loaded successfully!\n");
 }
 
 
